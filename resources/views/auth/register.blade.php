@@ -11,7 +11,7 @@
                             <img src="{{ asset('images/logo.png') }}" alt="image" class="img-fluid" style="height: 5em; width: auto;">
                         </div>
                     </div>
-                    <form method="POST" action="{{ route('register') }}" class="p-2">
+                    <form method="POST" action="{{ route('register') }}" class="p-2 was-validate">
                         @csrf
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">{{ __('Name') }}</label>
@@ -47,9 +47,7 @@
                             @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
-                                <div class="form-text text-danger">
-                                    Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
-                                </div>
+                                
                             </span>
                             @enderror
                         </div>
@@ -57,12 +55,17 @@
                             <label for="exampleFormControlInput1" class="form-label">{{ __('Confirm Password') }}</label>
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="Confirm password">
                         </div>
-                        <div class="mb-3">
-                            <button type="submit" class="btn btn-main w-100">
+                        <div>
+                            <button type="submit" class="btn btn-main col-12 text-center">
                                 {{ __('Register') }}
                             </button>
                         </div>
                     </form>
+                    <hr>
+                    <div class="col-12 text-center">
+                        <p class="sub">Already registered? <a href="{{ route('login') }}" class="btn btn-sm btn-warning">Login </a> </p>
+                    </div>
+                    <hr>
                 </div>
             </div>
         </div>

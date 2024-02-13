@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('username')->nullable()->unique();
             $table->string('email')->unique();
             $table->string('user_type')->default('Applicant');
-            $table->string('phone', 14)->unique()->nullable();
+            $table->string('phone', 14)->unique();
             $table->integer('status')->default(1);
             $table->string('password');
             $table->string('image', 50)->default('avatar.png');

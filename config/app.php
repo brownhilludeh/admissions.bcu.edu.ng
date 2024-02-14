@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'BCU Obudu'),
+    'name' => env('APP_NAME', 'British Canadian University'),
 
     /*
     |--------------------------------------------------------------------------

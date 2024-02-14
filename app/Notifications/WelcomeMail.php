@@ -39,11 +39,12 @@ class WelcomeMail extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->from('mail@bcu.edu.ng', 'brownportal ng')
-            ->subject('2024/2025 Admission Application 2')
-            ->greeting('Hello' . ' ' . $this->user->name.',')
-            ->line('Thank you emails express gratitude for choosing a product or service. These emails often thank the recipient and encourage them to continue 
-            exploring or using the product or service.Components of Welcome to BCU')
+            ->from('dev@brownportal.com', config('app.name', 'brownportal ng'))
+            ->subject('2024/2025 Application')
+            ->greeting('Hello' . ' ' . $this->user->name .',')
+            ->line('Recent changes to the study permit process may cause uncertainty regarding your plans to enrol to study at Holland College in September 2024. If you have already paid your $1000 confirmation fee and your plans have changed, we can refund this fee.  To cancel your application and apply for a refund please complete this form. <br>
+                    If you are accepted but have not paid your confirmation fee, we have extended your due date to February 19th to give you additional time to decide.  <br>
+                    Holland College does not defer applications.  If you cancel your application and regulations change in your favour, you will need to reapply to be considered for admission.   Your acceptance is not guaranteed.  ')
             ->action('Complete registration', url('/login'))
             ->line('Thank you for using our application!');
     }

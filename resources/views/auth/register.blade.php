@@ -11,7 +11,7 @@
                             <img src="{{ asset('images/logo.png') }}" alt="image" class="img-fluid" style="height: 5em; width: auto;">
                         </div>
                     </div>
-                    <form method="POST" action="{{ route('register') }}" class="p-2 was-validate">
+                    <form method="POST" action="{{ route('register') }}" class="p-2 was-validated">
                         @csrf
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">{{ __('Name') }}</label>
@@ -33,8 +33,8 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">{{ __('Phone Number') }}</label>
-                            <input id="phone" type="number" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required placeholder="09123456789" autocomplete="phone">
+                            <label for="phone" class="form-label">{{ __('Phone Number') }}</label>
+                            <input type="number" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" @required(true)>
                             @error('phone')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -42,8 +42,8 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">{{ __('Password') }}</label>
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required placeholder="Enter a strong password" autocomplete="new-password">
+                            <label for="password" class="form-label">{{ __('Password') }}</label>
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required placeholder="Enter a strong password" >
                             @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

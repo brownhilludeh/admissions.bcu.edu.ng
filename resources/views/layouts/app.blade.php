@@ -8,40 +8,24 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{config('app.name', 'British Canadian University')}}             :: @yield('title')</title>
+        <title>{{config('app.name', 'British Canadian University')}} :: @yield('title')</title>
 
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
-
         <!-- Scripts -->
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+
     </head>
 
     <body>
-
-    <!-- Main Modal -->
-    <div id="main_modal" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title"></h5>
-            <button type="reset" class="modal-btn btn btn-danger" data-bs-dismiss="modal">
-              <ion-icon name="close-outline"></ion-icon>
-              {{ __('Exit') }}
-            </button>
-          </div>
-          <div class="alert alert-danger" style="display:none; margin: 1em;"></div>
-          <div class="alert alert-success" style="display:none; margin: 1em;"></div>
-          <div class="modal-body" style="overflow:hidden;"></div>
+        <!-- Preloader -->
+        <div class="loader">
+            <div class="triple-spinner"></div>
         </div>
-      </div>
-    </div>
-    <!-- Preloader -->
-    <div id="preloader">
-      <div class="triple-spinner"></div>
-    </div>
+
         <div id="app">
+
             {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
@@ -88,19 +72,41 @@
                     </div>
                 </div>
             </nav> --}}
+            {{-- <iframe width="560" height="315" src="https://www.youtube.com/embed/EVdNpo8Aneo?si=RxSfljJnzc_ZuP2F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            --}}
 
+            {{-- <iframe width="560" height="315" src="https://www.youtube.com/embed/EVdNpo8Aneo?si=RxSfljJnzc_ZuP2F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            --}}
+
+            {{-- <iframe width="560" height="315" src="https://www.youtube.com/embed/EVdNpo8Aneo?si=RxSfljJnzc_ZuP2F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            --}}
             <main class="py-4">
                 @yield('content')
             </main>
         </div>
 
 
+
         <!--  JQuery    -->
         <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/print.js') }}"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+        <!-- JS -->
+        @yield('js-script')
+
+
+        <script>
+            window.addEventListener("load", () => {
+            const loader = document.querySelector(".loader");
+            
+            loader.classList.add("loader-hide");
+            });
+        </script>
     </body>
 
 </html>

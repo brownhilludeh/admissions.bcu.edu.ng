@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Faculty;
 use App\Models\User;
 use App\Notifications\WelcomeMail;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
-{    
+{
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -40,6 +41,12 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    public function showRegistrationForm()
+    {
+        $faculties = Faculty::with('departments')->get();
+        return view('auth.register', compact('faculties'));
     }
 
     /**
@@ -76,7 +83,7 @@ class RegisterController extends Controller
         ]);
 
         $user->notify(new WelcomeMail($user));
-        
+
         return $user;
     }
 }

@@ -110,18 +110,4 @@
         </div>
     </div>
 </div>
-
-
-<footer>
-    <div class="row">
-        <div class="col-12 text-center">
-            &copy;
-            <script>
-                document.write( new Date().getUTCFullYear() );
-            </script>
-
-            | brownportal ng
-        </div>
-    </div>
-</footer>
 @endsection

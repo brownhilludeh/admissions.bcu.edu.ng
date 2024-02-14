@@ -96,3 +96,65 @@
 @import 'xstyle';
 
 
+// Mobile SCSS
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 1024px) {
+    .sidebar {
+        transition: 0.9s ease-in-out;
+        max-width: 100%;
+        z-index: 10;
+        transform: translateX(-100%);
+
+        &.active {
+            transform: translateX(0);
+            background-image: linear-gradient(to bottom right, rgba(98, 31, 255, 0.2),
+                    rgba(9, 255, 0, 0.2), rgba(255, 217, 0, 0.2), rgba(255, 0, 0, 0.2));
+            background-color: var(--bp-light) !important;
+        }
+    }
+
+    .main {
+        padding-left: 0 !important;
+    }
+
+    .mobile-toggle,
+    .sidebar-close {
+        display: block;
+        place-items: center;
+        margin-right: 30px;
+        cursor: pointer;
+        z-index: 10;
+        color: var(--bp-main);
+        font-weight: 900;
+        font-size: x-large;
+        padding: .5em;
+        border-radius: .25em;
+    }
+
+    .sidebar-close {
+        position: absolute;
+        right: -10px;
+    }
+
+    .setting-tab {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+        gap: .5em;
+    }
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    .setting-tab {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+        gap: .5em;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 680px and up) */
+@media only screen and (max-width: 640px) {}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 480px) {}

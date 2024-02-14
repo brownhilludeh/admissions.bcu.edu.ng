@@ -24,7 +24,7 @@
             <div class="triple-spinner"></div>
         </div>
 
-        <div id="app">
+        <div id="app" class="app">
 
             {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
@@ -83,9 +83,21 @@
             <main class="py-4">
                 @yield('content')
             </main>
+
         </div>
 
+        <footer class="footer">
+            <div class="row ">
+                <div class="col-12 text-center">
+                    &copy;
+                    <script>
+                        document.write( new Date().getUTCFullYear() );
+                    </script>
 
+                    | brownportal ng
+                </div>
+            </div>
+        </footer>
 
         <!--  JQuery    -->
         <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>

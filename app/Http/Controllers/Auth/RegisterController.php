@@ -3,11 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\Faculty;
 use App\Models\User;
-use App\Notifications\WelcomeMail;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -43,12 +40,6 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function showRegistrationForm()
-    {
-        $faculties = Faculty::with('departments')->get();
-        return view('auth.register', compact('faculties'));
-    }
-
     /**
      * Get a validator for an incoming registration request.
      *
@@ -60,7 +51,6 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'phone' => ['required', 'numeric', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -73,17 +63,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = User::create([
-
+        return User::create([
             'name' => $data['name'],
-            'phone' => $data['phone'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-
         ]);
-
-        $user->notify(new WelcomeMail($user));
-
-        return $user;
     }
 }

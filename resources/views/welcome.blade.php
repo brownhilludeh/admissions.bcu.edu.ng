@@ -6,7 +6,7 @@
         <div class="col-md-10">
             <div class="alert alert-success text-center">
                 <p class="s">
-                    Notice
+                    Notice!
                     <br>
                     2023/2024 admission process is still on going. Minimum jamb requirement is 150. Admission fee is {{ __('NGN0.00') }}
                     <br>

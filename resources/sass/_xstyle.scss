@@ -1,16 +1,17 @@
-// .app{
-//   position: relative;
-//   top: 0;
-//   left: 0;
-//   // display: flex;
-//   // width: 100%;
-//   translate: (50%, 0%);
-//   height: 95vh;
-//   justify-content: center;
-//   align-items: center;
-// }
-.card {
-  border-radius: .95em !important;
+#app {
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom right, rgba(226, 214, 255, 0.2),
+      rgba(231, 255, 230, 0.2), rgba(255, 248, 212, 0.2), rgba(255, 167, 167, 0.2));
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: rgba(4, 2, 87, 0.05);
+  border-bottom: 1px solid var(--bp-main);
+  border-radius: 0.8em 0.8em 0 0;
+  padding: 1em 1em 0.6em;
 }
 /*============= Sidebar CSS  =============*/
 .sidebar {
@@ -186,7 +187,7 @@
 
 /*============= Main =============*/
 .main {
-  padding-left: 14.5em;
+  padding-left: 15em;
   max-width: 100%;
   margin-bottom: 2em;
   padding-bottom: 2em;

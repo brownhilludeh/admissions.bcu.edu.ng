@@ -53,3 +53,14 @@ if (!function_exists('create_option')) {
     echo $options;
   }
 }
+
+if (!function_exists('get_logo')) {
+  function get_logo()
+  {
+    $logo = get_option("logo");
+    if ($logo == "") {
+      return asset("logo.png");
+    }
+    return asset("$logo");
+  }
+}

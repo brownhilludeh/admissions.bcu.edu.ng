@@ -34,14 +34,14 @@
         </div>
         <div id="app">
             <main class="py-4">
-                <div class="container">
+                {{-- <div class="container">
                     <div class="row col-12">
                         <img src="{{ asset('images/logo.png') }}" class="text-center" alt="School Logo" style="height: 80px; width: auto; margin: 1em auto;">
                     </div>
-                </div>
+                </div> --}}
                 @yield('content')
 
-                <footer class="footer">
+                <footer class="footer mt-4">
                     <div class="row">
                         <div class="col-12 text-center">
                             &copy;

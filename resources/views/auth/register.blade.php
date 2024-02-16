@@ -4,8 +4,13 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card">
+            <div class="card rounded-4">
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 justify-content-center text-center mt-4 mb-0">
+                            <img src="{{ asset('images/logo.png') }}" alt="image" class="img-fluid" style="height: 5em; width: auto;">
+                        </div>
+                    </div>
                     <form method="POST" action="{{ route('register') }}" class="p-2 was-validated">
                         @csrf
                         <div class="mb-3">
@@ -38,7 +43,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">{{ __('Password') }}</label>
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required placeholder="Enter a strong password" autocomplete="phone">
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required placeholder="Enter a strong password" autocomplete="password">
                             @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -66,7 +71,52 @@
         </div>
         <div class="col-md-3">
             <div class="help-desk">
-                <img src="{{ asset('images/help.jpg') }}" alt="help desk" class="help-desk-img img-fluid">
+                <img src="{{ asset('images/help.jpg') }}" alt="help desk" class="help-desk-img img-fluid rounded-4">
+                <div class="lead mt-2">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="bg-transparent">
+                                    <h5 class="card-title title">Having troubles applying?</h5>
+                                    <p class="small">
+                                        <small>Get in touch with an application specialist to get help with the application process.</small>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="bg-transparent">
+                                    <ion-icon name="logo-whatsapp"></ion-icon>
+                                </td>
+                                <td class="bg-transparent"><a href="https://wa.me/2348060091229">Click to chat help-desk</a></td>
+                            </tr>
+                            <tr>
+                                <td class="bg-transparent">
+                                    <ion-icon name="mail-outline"></ion-icon>
+                                </td>
+                                <td class="bg-transparent">
+                                    <a href="mailto:help@bcu.edu.ng">help@bcu.edu.ng</a>
+                                    <a href="mailto:admisions@bcu.edu.ng">admisions@bcu.edu.ng</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bg-transparent">
+                                    <ion-icon name="phone-portrait-outline"></ion-icon>
+                                </td>
+                                <td class="bg-transparent"><a href="mailto:admisions@bcu.edu.ng">admisions@bcu.edu.ng</a></td>
+                            </tr>
+                            <tr>
+                                <td class="bg-transparent">
+                                    <ion-icon name="phone-portrait-outline"></ion-icon>
+                                </td>
+                                <td class="bg-transparent"><a href="tel:+2348060091229">+234 (0) 806 009 1229</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         {{-- <div class="col-md-5">

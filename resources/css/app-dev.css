@@ -201,7 +201,7 @@ button.btn-secondary:hover {
 }
 
 /* Preloader */
-#preloader {
+#preloader, .preloader {
   display: none;
   background-color: rgba(4, 2, 87, 0.2392156863);
   position: fixed;

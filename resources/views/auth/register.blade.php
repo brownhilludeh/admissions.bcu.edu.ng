@@ -11,7 +11,7 @@
                             <img src="{{ asset('images/logo.png') }}" alt="image" class="img-fluid" style="height: 5em; width: auto;">
                         </div>
                     </div>
-                    <form method="POST" action="{{ route('register') }}" class="p-2 was-validated">
+                    <form method="POST" action="{{ route('register') }}" class="p-2 was-validated" autocomplete="off">
                         @csrf
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">{{ __('Name') }}</label>
@@ -34,7 +34,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="phone" class="form-label">{{ __('Phone Number') }}</label>
-                            <input type="number" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" @required(true)>
+                            <input type="number" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required placeholder="Valid email address">
                             @error('phone')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -43,7 +43,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">{{ __('Password') }}</label>
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required placeholder="Enter a strong password" autocomplete="password">
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required value="{{ old('password') }}" placeholder="Enter a strong password" autocomplete="password">
                             @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -52,8 +52,8 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">{{ __('Confirm Password') }}</label>
-                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="off" placeholder="Confirm password">
+                            <label for="password_confirmation" class="form-label">{{ __('Confirm Password') }}</label>
+                            <input id="password_confirmation" type="password" class="form-control" name="password_confirmation" required placeholder="Confirm password">
                         </div>
                         <div>
                             <button type="submit" class="btn btn-main col-12 text-center">

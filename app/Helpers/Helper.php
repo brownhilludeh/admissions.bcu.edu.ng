@@ -64,3 +64,13 @@ if (!function_exists('get_logo')) {
     return asset("$logo");
   }
 }
+
+if (!function_exists('user_count')) {
+  function user_count($user_type)
+  {
+    $count = App\Models\User::where("user_type", $user_type)
+      ->selectRaw("COUNT(id) as total")
+      ->first()->total;
+    return $count;
+  }
+}

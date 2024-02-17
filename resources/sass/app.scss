@@ -1,11 +1,8 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-// Resets
-@import 'resets';
+@import url('https://fonts.bunny.net/css?family=Nunito');
 
 // Variables
 @import 'variables';
 
-@import 'xstyle';
-
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';

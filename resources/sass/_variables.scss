@@ -50,3 +50,13 @@
 .bg__white {
   background-color: var(--bg-white);
 }
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: rgba(4, 2, 87, 0.05);
+  border-bottom: 1px solid var(--bp-main);
+  padding: 0.6em;
+}

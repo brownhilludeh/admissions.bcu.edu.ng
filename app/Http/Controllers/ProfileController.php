@@ -18,7 +18,7 @@ class ProfileController extends Controller
     public function myProfile()
     {
         $profile = User::find(Auth::User()->id);
-        return view('backend.profile.view', compact('profile'));
+        return view('backend.profile.index', compact('profile'));
     }
 
     public function updatePassword(Request $request)

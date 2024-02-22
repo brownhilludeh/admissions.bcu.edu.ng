@@ -3,17 +3,17 @@
 @section('content')
 <div class="container">
 	<div class="row justify-content-center">
-		<div class="col-12 mb-2">
+		<div class="col-12  mb-2">
 			<div class="row mb-2">
 				<div class="col-12">
 					<ul class="nav nav-tabs profile-tab">
-						<li class="btn btn-main"><a data-bs-toggle="tab" href="#myProfile" aria-selected="true">{{ __('my Profile') }}</a></li>
-						<li class="btn btn-main"><a data-bs-toggle="tab" href="#password" aria-selected="true">{{ __('password') }}</a></li>
-						<li class="btn btn-main"><a data-bs-toggle="tab" href="#application" aria-selected="true">{{ __('application') }}</a></li>
-						<li class="btn btn-main"><a data-bs-toggle="tab" href="#documents" aria-selected="true">{{ __('documents') }}</a></li>
-						<li class="btn btn-main"><a data-bs-toggle="tab" href="#passport" aria-selected="truue">{{ __('passport') }}</a></li>
-						<li class="btn btn-main"><a data-bs-toggle="tab" href="#email" aria-selected="true">{{ __('Email SMTP') }}</a></li>
-						<li class="btn btn-main"><a data-bs-toggle="tab" href="#sms" aria-selected="true">{{ __('SMS') }}</a></li>
+						<li class="btn btn-main col  m-1"><a data-bs-toggle="tab" href="#myProfile" aria-selected="true">{{ __('my Profile') }}</a></li>
+						<li class="btn btn-main col  m-1"><a data-bs-toggle="tab" href="#password" aria-selected="true">{{ __('password') }}</a></li>
+						<li class="btn btn-main col  m-1"><a data-bs-toggle="tab" href="#application" aria-selected="true">{{ __('application') }}</a></li>
+						<li class="btn btn-main col  m-1"><a data-bs-toggle="tab" href="#documents" aria-selected="true">{{ __('documents') }}</a></li>
+						<li class="btn btn-main col  m-1"><a data-bs-toggle="tab" href="#passport" aria-selected="truue">{{ __('passport') }}</a></li>
+						<li class="btn btn-main col  m-1"><a data-bs-toggle="tab" href="#email" aria-selected="true">{{ __('Email SMTP') }}</a></li>
+						<li class="btn btn-main col  m-1"><a data-bs-toggle="tab" href="#sms" aria-selected="true">{{ __('SMS') }}</a></li>
 					</ul>
 				</div>
 			</div>
@@ -32,11 +32,7 @@
 											<table class="table table-bordered table-striped" width="100%">
 												<tbody style="text-align: center;">
 													<tr class="text-center">
-														<td colspan="2"><img src="@if ($profile->image != True)
-															{{ asset('storage/uploads/images/profile.png') }}
-														@else
-															{{ asset('storage/uploads/images/'.$profile->image) }}
-														@endif {{ asset('storage/uploads/images/'.$profile->image) }}" style="width: 100px; border-radius: 5px"></td>
+														<td colspan="2"><img src="{{ asset('storage/uploads/images/'.$profile->image) }}" style="width: 100px; border-radius: 5px"></td>
 													</tr>
 													<tr class="text-center">
 														<td>{{ __('Name') }}</td>
@@ -91,7 +87,7 @@
 										<div class="card-body">
 											<form action="{{ route('updatePassword', Auth::user()->id) }}" class="validate" enctype="multipart/form-data" method="post" accept-charset="utf-8">
 												@csrf
-												<div class="row">
+												<div class="form-group">
 													<label class="control-label">{{ __('Old Password') }}</label>
 													<input type="password" class="form-control" name="oldPassword" required>
 												</div>

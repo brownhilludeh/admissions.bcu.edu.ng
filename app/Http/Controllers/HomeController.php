@@ -32,4 +32,9 @@ class HomeController extends Controller
     {
         return view('backend.dashboards.' . Auth::user()->user_type);
     }
+
+    private function Applicant_dashboard()
+    {
+        return view('backend.dashboards.' . Auth::user()->user_type);
+    }
 }

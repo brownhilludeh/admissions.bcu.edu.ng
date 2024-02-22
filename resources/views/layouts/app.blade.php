@@ -23,7 +23,7 @@
 
     <body>
         <!-- Preloader -->
-        <div class="preloader" id="preloader">
+        <div id="preloader">
             <div class="triple-spinner"></div>
         </div>
         <div id="app">
@@ -97,9 +97,9 @@
         <!--  JQuery    -->
         <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
         <!--  Bootstrap JS    -->
-        <script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+        {{-- <script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.js') }}"></script> --}}
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
         {{--
         <link rel="stylesheet" href="{{ asset('css/main.css') }}"> --}}
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

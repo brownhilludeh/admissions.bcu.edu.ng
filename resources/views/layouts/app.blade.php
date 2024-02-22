@@ -10,7 +10,9 @@
 
         <title>{{ config('app.name', 'brownportal ng') }} :: @yield('title')</title>
 
+        <!-- Bootstrap core CSS     -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
         <!-- Fonts -->
 
         <!-- Scripts -->
@@ -28,6 +30,7 @@
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
+                        <img src="{{ get_logo() }}" alt="Logo" class="img-fluid" style="height: 30px; width: 30px;">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -90,6 +93,11 @@
             </footer>
         </div>
 
+
+        <!--  JQuery    -->
+        <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+        <!--  Bootstrap JS    -->
+        <script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
         {{--

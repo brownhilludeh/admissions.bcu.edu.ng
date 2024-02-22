@@ -100,7 +100,7 @@
                 <div class="card rounded-3 h-100 bg__white text-center">
                     <div class="card-body">
                         <ion-icon style="font-size: 2em;" name="git-network-outline"></ion-icon>
-                        <h4 class="card-title">Alumin</h4>
+                        <h4 class="card-title">Alumni</h4>
                         <p class="card-text">Alumni Student login & Register form. </p>
                         <a href="{{ route('register') }}" class="btn btn-main">Staff Login</a>
                     </div>

@@ -18,7 +18,7 @@ if (!function_exists('get_logo')) {
   {
     $logo = get_option("logo");
     if ($logo == "") {
-      return asset("images/logo.png");
+      return asset("logo.png");
     }
     return asset("$logo");
   }

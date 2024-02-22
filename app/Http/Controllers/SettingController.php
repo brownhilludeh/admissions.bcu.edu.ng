@@ -37,4 +37,35 @@ class SettingController extends Controller
             return response()->json(['result' => 'success', 'action' => 'update', 'message' => __('Record has been saved successfully')]);
         }
     }
+    public function logo(Request $request)
+    {
+        $this->validate($request, [
+            'logo' => 'required|image|mimes:jpeg,png,jpg,svg|max:251',
+        ]);
+
+        if ($request->hasFile('logo')) {
+            $image = $request->file('logo');
+            $name = 'logo.' . $image->getClientOriginalExtension();
+            $destinationPath = public_path('images/');
+            $image->move($destinationPath, $name);
+
+            $data = array();
+            $data['value'] = $name;
+            $data['updated_at'] = Carbon::now();
+
+            if (Setting::where('name', "logo")->exists()) {
+                Setting::where('name', '=', "logo")->update($data);
+            } else {
+                $data['name'] = "logo";
+                $data['created_at'] = Carbon::now();
+                Setting::insert($data);
+            }
+
+            if (!$request->ajax()) {
+                return redirect('general_settings')->with('success', __('Logo has been uploaded successfully'));
+            } else {
+                return response()->json(['result' => 'success', 'action' => 'update', 'message' => __('Logo has been uploaded successfully')]);
+            }
+        }
+    }
 }

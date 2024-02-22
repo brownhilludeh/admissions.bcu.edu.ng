@@ -190,7 +190,7 @@
             </a>
           </li>
           <li>
-            <a href="{{ url('profile.index') }}">
+            <a href="{{ route('profile') }}">
               <ion-icon name="body-outline"></ion-icon>
               <span>{{ __("Profile") }}</span>
             </a>

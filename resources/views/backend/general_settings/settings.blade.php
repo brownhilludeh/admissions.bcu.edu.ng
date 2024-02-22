@@ -64,15 +64,20 @@
 											</select>
 										</div>
 									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label class="control-label">{{ __('Language') }}</label>
-											<select class="form-control select2" name="language">
-												{{-- {!! load_language(get_option('language')) !!} --}}
-											</select>
-										</div>
+									<div class="form-group col-md-6">
+										<label class="control-label">{{ __('LinkedIn') }}</label>
+										<input type="url" class="form-control" name="linkedin" value="{{ get_option('linkedin') }}" placeholder="http://www.exmaple/your_handle">
 									</div>
-
+								</div>
+								<div class="row">
+									<div class="form-group col-md-6">
+										<label class="control-label">{{ __('Whatsapp') }}</label>
+										<input type="url" class="form-control" name="whatsapp" value="{{ get_option('whatsapp') }}" placeholder="2348060091229">
+									</div>
+									<div class="form-group col-md-6">
+										<label class="control-label">{{ __('Twitter') }}</label>
+										<input type="url" class="form-control " name="twitter" value="{{ get_option('twitter') }}" placeholder="http://www.exmaple/your_handle">
+									</div>
 								</div>
 								<div class="row">
 									<div class="form-group col-md-6">
@@ -104,9 +109,9 @@
 					</div>
 				</div>
 
-				{{-- <div id="logo" class="tab-pane fade col-md-6">
+				<div id="logo" class="tab-pane fade col-md-6">
 					<div class="card">
-						<div class="card-header">{{ __('Upload Logo') }} <span class="small text-danger">image must be less than 250kb</span></div>
+						<div class="card-header">{{ __('Upload Logo') }} <span class="small text-danger">Image must be less than 250kb</span></div>
 						<div class="card-body">
 							<form method="post" class="bp-submit" autocomplete="on" action="{{ route('upload_logo') }}" enctype="multipart/form-data">
 								{{ csrf_field() }}
@@ -121,7 +126,7 @@
 							</form>
 						</div>
 					</div>
-				</div> --}}
+				</div>
 
 				{{-- <div id="stamp" class="tab-pane fade col-md-6">
 					<div class="card">

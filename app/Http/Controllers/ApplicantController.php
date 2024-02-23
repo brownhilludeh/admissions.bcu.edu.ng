@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\College;
+use App\Models\Applicant;
 use Illuminate\Http\Request;
 
-class CollegeController extends Controller
+class ApplicantController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $colleges = College::get()->order_By('name', 'ASC');
-        return view('backend.college.index');
+        //
     }
 
     /**
@@ -35,7 +34,7 @@ class CollegeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(College $college)
+    public function show(Applicant $applicant)
     {
         //
     }
@@ -43,7 +42,7 @@ class CollegeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(College $college)
+    public function edit(Applicant $applicant)
     {
         //
     }
@@ -51,7 +50,7 @@ class CollegeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, College $college)
+    public function update(Request $request, Applicant $applicant)
     {
         //
     }
@@ -59,7 +58,7 @@ class CollegeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(College $college)
+    public function destroy(Applicant $applicant)
     {
         //
     }

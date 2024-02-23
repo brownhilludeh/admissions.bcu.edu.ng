@@ -37,7 +37,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('general_settings', [\App\Http\Controllers\SettingController::class, 'general_settings'])->name('general_settings');
     Route::post('setting/upload/logo', [\App\Http\Controllers\SettingController::class, 'logo'])->name('upload_logo');
     // Route::post('setting/upload/stamp', [\App\Http\Controllers\SettingController::class, 'stamp'])->name('upload_stamp');
-    // Route::get('backup_database', [\App\Http\Controllers\SettingController::class, 'backup_database'])->name('db.backup');
-
-
+    Route::get('backup_database', [\App\Http\Controllers\SettingController::class, 'backup_database'])->name('db.backup');
+    // College
+    Route::resource('colleges', App\Http\Controllers\CollegeController::class);
 });

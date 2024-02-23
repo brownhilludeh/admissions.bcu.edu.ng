@@ -26,6 +26,7 @@ class ProfileController extends Controller
         $this->validate($request, [
             'oldPassword' => 'required',
             'password' => 'required|string|min:6|confirmed',
+
         ]);
 
         $user = User::findOrFail(Auth::user()->id);
@@ -34,9 +35,9 @@ class ProfileController extends Controller
             $user->save();
             Session::flush();
         } else {
-            return redirect(url("profile/password/change"))->with('error', __('Your old password does not match our record. Link your email for password reset link.'));
+            return back()->with('error', __('Your old password does not match our record. Link your email for password reset link.'));
         }
 
-        return redirect(route("myProfile"))->with('success', __('Updated successfully'));
+        return redirect(route("profile"))->with('success', __('Updated successfully'));
     }
 }

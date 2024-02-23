@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('colleges', function (Blueprint $table) {
+        Schema::create('applicant_sessions', function (Blueprint $table) {
             $table->id();
-            $table->string('faculty_name')->unique();
-            $table->string('dean')->unique();
+            $table->integer('session_id');
+            $table->integer('applicant_id');
+            $table->integer('college_id');
+            $table->integer('programme_id');
+            $table->integer('batch_id');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('colleges');
+        Schema::dropIfExists('applicant_sessions');
     }
 };

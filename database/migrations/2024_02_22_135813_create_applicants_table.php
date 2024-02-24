@@ -18,17 +18,17 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('first_name');
             $table->string('other_name')->nullable();
-            $table->string('name_title');
+            $table->string('name_title')->nullable();
             $table->date('birthday');
             $table->string('marital_status');
             $table->string('reg_no')->unique();
             $table->string('gender', 1);
             // Contact Info
             $table->text('address');
-            $table->string('home_town')->nullable();
+            $table->string('home_town');
             $table->string('mobile', 14)->nullable();
             $table->string('state');
-            $table->string('city')->nullable();
+            $table->string('city');
             $table->string('country');
             // Parent Info
             $table->string('parent_name');

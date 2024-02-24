@@ -23,12 +23,12 @@ return new class extends Migration
             // first sitting
             $table->string('ssce_1');
             $table->string('ssce_1_result');
-            $table->string('ssce_reg');
+            $table->string('ssce_reg_1');
             $table->string('school_name_1');
             // second sitting
             $table->string('ssce_2');
             $table->string('ssce_2_result');
-            $table->string('ssce_reg');
+            $table->string('ssce_reg_2');
             $table->string('school_name_2');
             // course choice 
             $table->string('college_id');

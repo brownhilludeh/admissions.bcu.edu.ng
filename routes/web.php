@@ -40,4 +40,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('backup_database', [\App\Http\Controllers\SettingController::class, 'backup_database'])->name('db.backup');
     // College
     Route::resource('colleges', App\Http\Controllers\CollegeController::class);
+    // Programmers
+    Route::get('programmes/college/{college_id}', [App\Http\Controllers\ProgrammeController::class, 'index']);
+    Route::resource('programmes', App\Http\Controllers\ProgrammeController::class);
 });

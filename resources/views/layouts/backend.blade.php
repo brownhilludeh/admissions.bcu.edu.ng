@@ -294,8 +294,8 @@
     <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
     <!--  Bootstrap JS    -->
     <script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script> --}}
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script> --}}
     <!--  DataTable Plugin    -->
     <script type="text/javascript" src="{{ asset('DataTables/datatables.min.js') }}"></script>
     <!--  Select 2 Plugin    -->
@@ -322,95 +322,90 @@
 
     <!-- JS -->
     @yield('js-script')
-
-
     <script type="text/javascript">
       $(function() {
-          $('.ajax-modal').on('click', function dropdown() {
-          console.getElementById("").style.display = "block";
-          });
-              //Show Success Message
-              @if (Session::has('success'))
-              Command: toastr["success"]("{{ session('success') }}")
-              @endif
-              
-              //Show Single Error Message
-              @if (Session::has('error'))
-              Command: toastr["error"]("{{ session('error') }}")
-              @endif
-              
-              //Show Alert Message
-              @if (Session::has('info'))
-                  Command: toastr["info"]("{{ session('info') }}")
-              @endif
-                  
-                  <?php $i = 0; ?>
-              
-              @foreach ($errors->all() as $error)
-                  Command: toastr["error"]("{{ $error }}");
-                  
-                  var name = "{{ $errors->keys()[$i] }}";
-                  
-                  $("input[name='" + name + "']").addClass('error');
-                  $("select[name='" + name + "'] + span").addClass('error');
-                  
-                  $("input[name='" + name + "'], select[name='" + name + "']").parent().append("<span class='v-error'>{{ $error }}</span>");
-                  
-                  <?php $i++; ?>
-              @endforeach
-      
-      
-              $(".data-table").DataTable({
-                  searching: true,
-                  // select: true,
-                  responsive: true,
-                  "bAutoWidth": false,
-                  "ordering": true,
-                  "language": {
-                      "decimal": "",
-                      "emptyTable": "{{ __('No Record Found') }}",
-                      "info": "",
-                      "infoEmpty": "{{ __('Showing 0 To 0 Of 0 Entries') }}",
-                      "infoFiltered": "(filtered from _MAX_ total entries)",
-                      "infoPostFix": "",
-                      "thousands": ",",
-                      "lengthMenu": "",
-                      "loadingRecords": "{{ __('Loading...') }}",
-                      "processing": "{{ __('Processing...') }}",
-                      "search": "{{ __('') }}",
-                      "zeroRecords": "{{ __('No matching records found') }}",
-                      "paginate": {
-                          "first": "{{ __('1') }}",
-                          "last": "{{ __('Last') }}",
-                          "next": "{{ '>' }}",
-                          "previous": "{{ '<' }}"
-                      },
-                      "aria": {
-                          "sortAscending": ": activate to sort column ascending",
-                          "sortDescending": ": activate to sort column descending"
-                      }
-                  },
-                  // dom: 'lBftirp',
-                      dom: 'Bfrtipl',
-                  // dom: '<"top"i>rt<"bottom"flp><"clear">',
-      
-                  // "dom": '<"top"fBtr><"bottom"lip><"clear">',
-                  buttons: [
-                      'excel', 'pdf', 'print', 'copy', 'csv',
-                  ],
-              });
-      
-              function changeSession(elem){
-                  if($(elem).val() == ""){
-                      return;
-                  }
-                  window.location = "<?php echo url('change_session') ?>/"+$(elem).val();
-              }
-      
-              if ($(".notification-items").has("li").length === 0) {
-              $(".notification-items").append("<li><a href='#'> No Message Found !</a></li>");
-              }
-          });
+            //Show Success Message
+            @if (Session::has('success'))
+            Command: toastr["success"]("{{ session('success') }}")
+            @endif
+            
+            //Show Single Error Message
+            @if (Session::has('error'))
+            Command: toastr["error"]("{{ session('error') }}")
+            @endif
+            
+            //Show Alert Message
+            @if (Session::has('info'))
+                Command: toastr["info"]("{{ session('info') }}")
+            @endif
+                
+                <?php $i = 0; ?>
+            
+            @foreach ($errors->all() as $error)
+                Command: toastr["error"]("{{ $error }}");
+                
+                var name = "{{ $errors->keys()[$i] }}";
+                
+                $("input[name='" + name + "']").addClass('error');
+                $("select[name='" + name + "'] + span").addClass('error');
+                
+                $("input[name='" + name + "'], select[name='" + name + "']").parent().append("<span class='v-error'>{{ $error }}</span>");
+                
+                <?php $i++; ?>
+            @endforeach
+    
+    
+            $(".data-table").DataTable({
+                searching: true,
+                // select: true,
+                responsive: true,
+                "bAutoWidth": false,
+                "ordering": true,
+                "language": {
+                    "decimal": "",
+                    "emptyTable": "{{ __('No Record Found') }}",
+                    "info": "",
+                    "infoEmpty": "{{ __('Showing 0 To 0 Of 0 Entries') }}",
+                    "infoFiltered": "(filtered from _MAX_ total entries)",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": "",
+                    "loadingRecords": "{{ __('Loading...') }}",
+                    "processing": "{{ __('Processing...') }}",
+                    "search": "{{ __('') }}",
+                    "zeroRecords": "{{ __('No matching records found') }}",
+                    "paginate": {
+                        "first": "{{ __('1') }}",
+                        "last": "{{ __('Last') }}",
+                        "next": "{{ '>' }}",
+                        "previous": "{{ '<' }}"
+                    },
+                    "aria": {
+                        "sortAscending": ": activate to sort column ascending",
+                        "sortDescending": ": activate to sort column descending"
+                    }
+                },
+                // dom: 'lBftirp',
+                    dom: 'Bfrtipl',
+                // dom: '<"top"i>rt<"bottom"flp><"clear">',
+    
+                // "dom": '<"top"fBtr><"bottom"lip><"clear">',
+                buttons: [
+                    'excel', 'pdf', 'print', 'copy', 'csv',
+                ],
+            });
+    
+            function changeSession(elem){
+                if($(elem).val() == ""){
+                    return;
+                }
+                window.location = "<?php echo url('change_session') ?>/"+$(elem).val();
+            }
+    
+            if ($(".notification-items").has("li").length === 0) {
+            $(".notification-items").append("<li><a href='#'> No Message Found !</a></li>");
+            }
+        });
     </script>
   </body>
 

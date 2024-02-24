@@ -105,7 +105,7 @@ button {
   outline: 0;
   border: none;
   background-color: transparent;
-  margin-inline: .2em !important;
+  margin-inline: .2em;
 }
 
 label {
@@ -118,3 +118,4 @@ input[type=reset].btn-block,
 input[type=submit].btn-block {
   width: 100%
 }
+

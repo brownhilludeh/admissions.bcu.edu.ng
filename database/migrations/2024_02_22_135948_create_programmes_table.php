@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('programmes', function (Blueprint $table) {
             $table->id();
-            $table->string('department_name');
-            $table->integer('faculty_id');
-            $table->integer('hod')->nullable();
+            $table->string('programme_name')->unique();
+            $table->integer('college_id');
+            $table->integer('hod_id')->nullable()->unique();
             $table->integer('capacity');
             $table->timestamps();
             $table->softDeletes();

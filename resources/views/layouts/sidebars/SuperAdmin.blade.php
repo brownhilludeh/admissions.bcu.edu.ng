@@ -90,6 +90,13 @@
     <span>{{ __("Colleges") }}</span>
   </a>
 </li>
+{{-- Colleges --}}
+<li>
+  <a href="{{ route('programmes.index') }}">
+    <ion-icon name="layers-outline"></ion-icon>
+    <span>{{ __("Programmes") }}</span>
+  </a>
+</li>
 {{-- Setting --}}
 <li>
   <a href="{{ route('general_settings') }}">

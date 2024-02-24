@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('colleges', function (Blueprint $table) {
             $table->id();
-            $table->string('faculty_name')->unique();
+            $table->string('college_name')->unique();
             $table->string('dean')->unique();
             $table->timestamps();
             $table->softDeletes();

@@ -21,7 +21,7 @@
                         <div class="form-group">
                             <div class="col-sm-12">
                                 <label class="control-label">{{ __('College') }}</label>
-                                <select name="class_id" class="form-control select2" required>
+                                <select name="college_id" class="form-control select2" required>
                                     <option value="">{{ __('Select One') }}</option>
                                     {{ create_option('colleges', 'id', 'college_name', $programme->college_id) }}
                                 </select>

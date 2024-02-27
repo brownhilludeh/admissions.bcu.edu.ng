@@ -29,34 +29,11 @@
   </ul>
 </li>
 {{-- Academics --}}
-<li class="sidebar-submenu">
-  <a href="#" class="sidebar-menu-dropdown">
+<li>
+  <a href="{{ route('academic_years.index') }}" class="sidebar-menu-dropdown">
     <ion-icon name="school-outline"></ion-icon>
     <span>{{ __('Academics') }}</span>
-    <div class="dropdown-icon"></div>
   </a>
-  <ul class="sidebar-menu sidebar-menu-dropdown-content">
-    <li>
-      <a href="{{ route('academic_years.index') }}">
-        {{ __('Academic year') }}
-      </a>
-    </li>
-    <li>
-      <a href="{{ url('classes.index') }}">
-        {{ __('Classes') }}
-      </a>
-    </li>
-    <li>
-      <a href="{{ url("sections.index") }}">
-        {{ __('Sections') }}
-      </a>
-    </li>
-    <li>
-      <a href="{{ url("subjects.index") }}">
-        {{ __('Subjects') }}
-      </a>
-    </li>
-  </ul>
 </li>
 {{-- Students --}}
 <li class="sidebar-submenu">

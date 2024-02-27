@@ -9,6 +9,11 @@ use Illuminate\Validation\Rule;
 
 class ProgrammeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth']);
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -75,13 +80,11 @@ class ProgrammeController extends Controller
     public function update(Request $request, Programme $programme)
     {
         $this->validate($request, [
-
-
             'programme_name' => [
                 'required', 'string', 'max:191',
                 Rule::unique('programmes')->ignore($programme->id)
             ],
-            'college_id' => 'string',
+            'college_id' => 'required|numeric',
             'hod' =>
             [
                 'nullable', 'string', 'max:191',
@@ -89,7 +92,6 @@ class ProgrammeController extends Controller
             ],
             'capacity' => 'numeric',
         ]);
-
         $programme->programme_name = $request->programme_name;
         $programme->college_id = $request->college_id;
         $programme->hod = $request->hod;

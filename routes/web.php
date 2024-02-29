@@ -43,4 +43,10 @@ Route::middleware(['auth'])->group(function () {
     // Programmers
     Route::get('programmes/college/{college_id}', [App\Http\Controllers\ProgrammeController::class, 'index']);
     Route::resource('programmes', App\Http\Controllers\ProgrammeController::class);
+
+
+    // Student Protected
+    Route::middleware(['applicant'])->group(function () {
+        Route::resource('applicant_registrations', \App\Http\Controllers\ApplicantController::class);
+    });
 });

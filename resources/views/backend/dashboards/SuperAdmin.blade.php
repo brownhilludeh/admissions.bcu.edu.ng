@@ -20,7 +20,7 @@
 
 
           {{ __('You are logged in!') }}
-          Super Admin
+          as {{ Auth::user()->user_type }}
         </div>
       </div>
     </div>

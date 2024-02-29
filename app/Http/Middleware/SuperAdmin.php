@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class SuperAdmin
@@ -15,6 +16,9 @@ class SuperAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if (Auth::User()->user_type != "SuperAdmin") {
+            return back()->with('error', __('You do not have the permission to view this page.'));
+        };
         return $next($request);
     }
 }

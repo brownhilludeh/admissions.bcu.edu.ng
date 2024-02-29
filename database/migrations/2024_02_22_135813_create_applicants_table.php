@@ -38,12 +38,12 @@ return new class extends Migration
             $table->string('parent_phone');
             $table->string('parent_email');
             // Next of Kin Info
-            $table->string('nok_name');
-            $table->string('nok_relationship');
-            $table->string('nok_address');
-            $table->string('nok_pob');
-            $table->string('nok_phone');
-            $table->string('nok_email');
+            $table->string('nok_name')->nullable();
+            $table->string('nok_relationship')->nullable();
+            $table->string('nok_address')->nullable();
+            $table->string('nok_pob')->nullable();
+            $table->string('nok_phone')->nullable();
+            $table->string('nok_email')->nullable();
             //  Others
             $table->timestamps();
             $table->softDeletes();

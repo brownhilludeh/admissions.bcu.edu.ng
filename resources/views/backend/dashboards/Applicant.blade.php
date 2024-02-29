@@ -19,8 +19,7 @@
         <div class="card-body">
 
 
-          {{ __('You are logged in!') }}
-          Super Admin
+          {{ __('You are logged in as an ' . Auth::user()->user_type ) }}
         </div>
       </div>
     </div>

@@ -44,8 +44,8 @@
   </a>
   <ul class="sidebar-menu sidebar-menu-dropdown-content">
     <li>
-      <a href="{{ url('students.index') }}">
-        {{ __('All users') }}
+      <a href="{{ route('users.index') }}">
+        {{ __('All Users') }}
       </a>
     </li>
     <li>

@@ -10,9 +10,10 @@ class AdmissionTeamController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($user_type = "")
     {
-        //
+        $user_type = [];
+        return view('index', compact('user_type'));
     }
 
     /**

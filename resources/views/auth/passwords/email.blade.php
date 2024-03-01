@@ -37,6 +37,9 @@
                     <hr>
                     <div class="col-12 text-center">
                         <p class="sub">Are you a fresh applicant? <a href="{{ route('register') }}" class="btn btn-sm btn-warning">{{ __('Register') }} </a> </p>
+                        @auth
+                        <p class="sub"><a href="{{ route('home') }}" class="btn btn-link">Back to Dashboard</a> </p>
+                        @endauth
                     </div>
                     <hr>
                 </div>

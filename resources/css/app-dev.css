@@ -139,38 +139,37 @@ input[type=submit].btn-block {
   font-weight: 500;
   font-size: 0.85em;
   text-transform: capitalize;
+  transition: ease-in-out 0.5s all;
 }
 
 .btn-main {
   background-color: var(--bp-main) !important;
   color: var(--bp-textLight) !important;
-  transition: all ease 0.5s;
+  transition: ease-in-out 0.5s all;
   border: none;
 }
 .btn-main:hover {
   background-color: var(--bg-white) !important;
   color: var(--main) !important;
   border: solid 1px var(--bp-main);
-  transform: scale(0.9);
 }
 
 .btn-orange {
   background-color: var(--bp-orange);
   color: var(--bp-textLight);
-  transition: all ease 0.5s;
+  transition: ease-in-out 0.5s all;
 }
 .btn-orange:hover {
   background-color: var(--bg-white);
   color: var(--bp-main);
   border: solid 1px var(--bp-main);
-  transform: scale(0.9);
 }
 
 .btn:hover {
   background-color: rgba(0, 0, 0, 0);
   color: var(--bp-dark);
-  transition: all ease 1s;
-  transform: scale(1.05);
+  transition: ease-in-out 0.5s all;
+  transform: scale(1.01);
 }
 
 .bg__yellow {

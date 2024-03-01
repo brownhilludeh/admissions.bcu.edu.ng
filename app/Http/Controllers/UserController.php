@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -9,9 +10,18 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($user_type = "")
     {
-        //
+        $user_type = [];
+        if ($user_type != '') {
+            $users = User::where('user_type', "!=", "super_admin")
+                ->where("user_type", $user_type)
+                ->orderBy('id', 'DESC')
+                ->get();
+            return view('backend.user.index', compact('user_type', 'users'));
+        }
+        $users = User::where('deleted_at', '!=', Null)->get();
+        return view('backend.user.index', compact('user_type', 'users'));
     }
 
     /**

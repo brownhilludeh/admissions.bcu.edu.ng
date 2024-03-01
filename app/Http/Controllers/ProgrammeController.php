@@ -19,7 +19,7 @@ class ProgrammeController extends Controller
      */
     public function index($college = "")
     {
-        $programmes = [];
+        $programmes = array();
         if ($college != "") {
             $programmes = Programme::with('colleges')
                 ->where('programmes.college_id', $college)

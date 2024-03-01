@@ -79,18 +79,20 @@
 								</div>
 
 								<div class="col-md-6">
-									<div class="alert alert-success">
-										Helo,
-										<br>
-										Your applicant is still under review. You will get an email on your admission status once decission has been made.
-										<br>
-										Thank you for apllication and goodluck
-
-										<br>
-										<p class="mt-3">
-											Click to <a href="http://" class="btn btn-main">Complete your registration for {{ get_academic_year() }}</a> session
-										</p>
-									</div>
+									@if (Auth::user()->user_type == 'Applicant')
+											<div class="alert alert-success">
+												Helo,
+												<br>
+												Your applicant is still under review. You will get an email on your admission status once decission has been made.
+												<br>
+												Thank you for apllication and goodluck
+											
+												<br>
+												<p class="mt-3">
+													Click to <a href="http://" class="btn btn-main">Complete your registration for {{ get_academic_year() }}</a> session
+												</p>
+											</div>
+									@endif
 								</div>
 							</div>
 						</div>

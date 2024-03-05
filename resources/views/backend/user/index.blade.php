@@ -13,7 +13,7 @@
             <option @if (old('Admin')=='Admin' ) selected @endif value="Admin">{{ __('Admin') }}</option>
             <option @if (old('Librarian')=='Librarian' ) selected @endif value="Librarian">{{ __('Librarian') }}</option>
             <option @if (old('Team')=='Team' ) selected @endif value="Team" disabled>{{ __('Team') }}</option>
-            <option @if (old('Applicant')=='Applicant' ) selected @endif value="Student">{{ __('Applicant') }}</option>
+            <option @if (old('Applicant')=='Applicant' ) selected @endif value="Applicant">{{ __('Applicant') }}</option>
           </select>
           {{-- <a href="{{ route('users.create') }}" data-title="{{ __('Add New User') }}" class="btn app-blue ajax-modal">{{ __('Add New User') }}</a> --}}
         </div>

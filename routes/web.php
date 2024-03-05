@@ -47,6 +47,7 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('programmes', App\Http\Controllers\ProgrammeController::class);
         // Users and Team
         Route::get('admission_teams', 'UserController@admissionTeam')->name('admissionTeam');
+        Route::get('users/get_users/{user_type?}', [App\Http\Controllers\UserController::class, 'index']);
         Route::resource('users', App\Http\Controllers\UserController::class);
     });
 

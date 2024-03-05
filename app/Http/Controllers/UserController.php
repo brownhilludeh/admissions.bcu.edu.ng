@@ -12,7 +12,7 @@ class UserController extends Controller
      */
     public function index($user_type = "")
     {
-        $user_type = [];
+        $user_type = $user_type;
         if ($user_type != '') {
             $users = User::where('user_type', "!=", "super_admin")
                 ->where("user_type", $user_type)

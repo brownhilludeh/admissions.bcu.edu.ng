@@ -72,9 +72,9 @@ $(function () {
 		 $.ajax({
 			 url: link,
 			 beforeSend: function(){
-				$("#preloader").css("display","block"); 
+				$(".preloader").css("display","block"); 
 			 },success: function(data){
-				$("#preloader").css("display","none");
+				$(".preloader").css("display","none");
 				$('#main_modal .modal-title').html(title);
 				$('#main_modal .modal-body').html(data);
 				$("#main_modal .alert-success").css("display","none");

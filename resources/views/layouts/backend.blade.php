@@ -17,16 +17,16 @@
     <!-- Fonts -->
     <!-- Bootstrap core CSS     -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/css/bootstrap.min.css') }}" rel="stylesheet" />
     <!-- Datatable core CSS     -->
-    <link href="{{ asset('DataTables/datatables.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/DataTables/datatables.css') }}" rel="stylesheet" />
     <!-- bootstrap-datepicker library -->
     {{--
     <link href="{{ asset('public/backend') }}/css/bootstrap-datepicker.css" rel="stylesheet" /> --}}
     <!-- Select 2 library -->
-    <link href="{{ asset('css/select2.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/css/select2.css') }}" rel="stylesheet" />
     <!-- Dropify library -->
-    <link href="{{ asset('css/dropify.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/css/dropify.min.css') }}" rel="stylesheet" />
     <!--  Quill editor    -->
     {{--
     <link href="{{ asset('public/backend') }}/css/summernote.css" rel="stylesheet" /> --}}
@@ -37,7 +37,7 @@
     <link href="{{ asset('public/backend') }}/css/fonts.css" rel="stylesheet"> --}}
     {{--
     <link href="{{ asset('public/backend') }}/css/themify-icons.css" rel="stylesheet"> --}}
-    <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/toastr.min.css') }}" rel="stylesheet">
     {{--
     <link href="{{ asset('public/backend') }}/css/nice-select.css" rel="stylesheet"> --}}
     {{--
@@ -52,16 +52,16 @@
     {{--
     <link href="{{ asset('public/backend') }}/css/style.css" rel="stylesheet" /> --}}
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
 
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/css/main.css') }}">
   </head>
 
   <body>
     <!-- Preloader -->
-    <div id="preloader">
+    {{-- <div id="preloader">
       <div class="triple-spinner"></div>
-    </div>
+    </div> --}}
     <!-- Main Modal -->
     <div id="main_modal" class="modal fade" role="dialog">
       <div class="modal-dialog modal-lg">
@@ -291,27 +291,27 @@
     </div>
 
     <!--  JQuery    -->
-    <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/jquery.min.js') }}"></script>
     <!--  Bootstrap JS    -->
-    <script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/bootstrap.bundle.min.js') }}"></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script> --}}
     {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script> --}}
     <!--  DataTable Plugin    -->
-    <script type="text/javascript" src="{{ asset('DataTables/datatables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/DataTables/datatables.min.js') }}"></script>
     <!--  Select 2 Plugin    -->
-    <script type="text/javascript" src="{{ asset('js/select2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/select2.min.js') }}"></script>
     <!--  jQuery Validation   -->
-    <script type="text/javascript" src="{{ asset('/js/jquery.validate.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/jquery.validate.min.js') }}"></script>
     <!--  Bootstrap Datepicker  -->
-    <script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/bootstrap-datepicker.js') }}"></script>
     <!--  Mask Plugin   -->
-    <script type="text/javascript" src="{{ asset('js/jquery.mask.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/jquery.mask.min.js') }}"></script>
     <!--  Dropify  -->
-    <script type="text/javascript" src="{{ asset('js/dropify.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/dropify.min.js') }}"></script>
     <!--  Toastr Plugin  -->
-    <script type="text/javascript" src="{{ asset('js/toastr.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/toastr.min.js') }}"></script>
     <!--  Print Plugin    -->
-    <script type="text/javascript" src="{{ asset('js/print.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/print.js') }}"></script>
     {{--
     <link rel="stylesheet" href="{{ asset('css/main.css') }}"> --}}
 

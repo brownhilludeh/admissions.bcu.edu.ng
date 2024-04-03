@@ -1,28 +1,14 @@
-// Fonts
-@import url('https://fonts.bunny.net/css?family=Nunito');
-
-// Variables
-@import 'variables';
-
-// Bootstrap
-@import 'bootstrap/scss/bootstrap';
-
-
+// Reuseablere
 $transition-duration: 2s;
-$path-length: 157px; // Retrieved using SVG's getTotalLength()
+$path-length: 10em; // Retrieved using SVG's getTotalLength()
 
-html, body {
-  width: 100%;
+.preloader {
+    width: 100%;
   height: 100%;
-}
-
-body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-svg {
+  svg {
   overflow: visible;
   width: 100px;
   height: 150px;
@@ -50,6 +36,8 @@ svg {
     stroke-dashoffset: 0;
     animation: escalade $transition-duration cubic-bezier(0.8, 0, 0.2, 1) infinite;
   }
+}
+
 }
 
 @keyframes slide {

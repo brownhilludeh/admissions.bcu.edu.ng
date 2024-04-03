@@ -1,65 +1,111 @@
 // Reuseablere
-$transition-duration: 2s;
-$path-length: 10em; // Retrieved using SVG's getTotalLength()
-
-.preloader {
-    width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  svg {
-  overflow: visible;
-  width: 100px;
-  height: 150px;
+// .preloader {
+//     width: 100%;
+//   height: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   svg {
+//   overflow: visible;
+//   width: 100px;
+//   height: 150px;
   
-  g {
-    animation: slide $transition-duration linear infinite;
+//   g {
+//     animation: slide 2s linear infinite;
     
-    &:nth-child(2) {
-      animation-delay: $transition-duration / 4;
+//     &:nth-child(2) {
+//       animation-delay: 2s / 4;
       
-      path {
-        animation-delay: $transition-duration / 4;
-        stroke-dasharray: 0px $path-length + 1;
-        stroke-dashoffset: 1px;
-      }
-    }
-  }
+//       path {
+//         animation-delay: 2s / 4;
+//         stroke-dasharray: 0px 10em + 1;
+//         stroke-dashoffset: 1px;
+//       }
+//     }
+//   }
   
-  path{
-    stroke: url(#gradient);
-    stroke-width: 20px;
-    stroke-linecap: round;
-    fill: none;
-    stroke-dasharray: 0 $path-length;
-    stroke-dashoffset: 0;
-    animation: escalade $transition-duration cubic-bezier(0.8, 0, 0.2, 1) infinite;
+//   path{
+//     // stroke: url(#gradient);
+//     stroke-width: 20px;
+//     stroke-linecap: round;
+//     fill: none;
+//     stroke-dasharray: 0 10em;
+//     stroke-dashoffset: 0;
+//     animation: escalade 2s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+//   }
+// }
+
+// }
+
+// @keyframes slide {
+//   0% {
+//     transform: translateY(-50px);
+//   }
+//   100% {
+//     transform: translateY(50px);
+//   }
+// }
+
+// @keyframes escalade {
+//   0% {
+//     stroke-dasharray: 0 10em;
+//     stroke-dashoffset: 0;
+//   }
+//   50% {
+//     stroke-dasharray: 10em 10em;
+//     stroke-dashoffset: 0;
+//   }
+//   100% {
+//     stroke-dasharray: 10em 10em;
+//     stroke-dashoffset: -(10em - 1);
+//   }
+// }
+
+// button
+.btn {
+  padding: .25em 1.25em;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: .25em;
+  font-size: .85em;
+  text-transform: capitalize;
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: all .5s ease-in-out;
+
+  &:hover {
+    background-color: unset !important;
+    color: unset !important;
+    // border: solid 1px var(--bp-main);
+    transform: scale(0.98);
+    border-radius: 1.5em;
   }
 }
 
+.btn__main, .btn-primary {
+  background-color: #111E55;
+  color: #f3f3f3;
 }
 
-@keyframes slide {
-  0% {
-    transform: translateY(-50px);
-  }
-  100% {
-    transform: translateY(50px);
-  }
+
+
+.bg__yellow {
+  background-color: var(--bg-yellowLight);
 }
 
-@keyframes escalade {
-  0% {
-    stroke-dasharray: 0 $path-length;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dasharray: $path-length $path-length;
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dasharray: $path-length $path-length;
-    stroke-dashoffset: -($path-length - 1);
-  }
+.bg__gray {
+  background-color: var(--bg-gray);
+}
+
+.bg__mint {
+  background-color: var(--bg-mint);
+}
+
+.bg__peach {
+  background-color: var(--bg-peach);
+}
+
+.bg__white {
+  background-color: var(--bg-white);
 }

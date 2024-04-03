@@ -7,6 +7,8 @@
 @import 'bcuVariables';
 
 // Main CSS
-
-
-
+#app {
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom right, rgba(226, 214, 255, 0.2),
+      rgba(231, 255, 230, 0.2), rgba(255, 248, 212, 0.2), rgba(255, 167, 167, 0.2));
+}

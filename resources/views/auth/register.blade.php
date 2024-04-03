@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('title', 'Student Registration')
+@extends('layouts.frontend')
+@section('title', 'Account Registration')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -68,7 +68,7 @@
             </div>
         </div>
         <div class="col-md-5">
-            <div class="card mb-2">
+            {{-- <div class="card mb-2">
                 @foreach ($faculties as $faculty)
                 <div class="card-body">
                     <div class="card-header lead">
@@ -81,7 +81,7 @@
                     </ul>
                 </div>
                 @endforeach
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>

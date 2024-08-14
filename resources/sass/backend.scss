@@ -1,0 +1,447 @@
+/*------------------------------------------------------------------
+[Master StyleSheet]
+
+Project                            :   BrownPortal NG - HTML5 Bootstrap Admin Dashboard
+Create Date                        :
+Author & Copyright Ownership       :   Brownportal NG
+Author URL                         :   https://brownportal.com/app/dashboard
+Support	                           :   https://support.brownportal.com/
+License Details                    :   https://brownportal.com/licenses-details
+------------------------------------------------------------------*/
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// Variables
+@import 'themes';
+@import 'variable';
+@import 'resets';
+@import 'avatars';
+@import 'bootstrap/cards';
+@import 'bootstrap/breadcrumb';
+@import 'bootstrap/buttons';
+@import 'bootstrap/forms';
+@import 'bootstrap/modals';
+@import 'general';
+
+
+/*============= App Page =============*/
+.app-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    background: $background;
+}
+
+/*============= AppHeader =============*/
+.app-header {
+    max-width: 100%;
+    width: 100vw;
+    height: 3.25em;
+    z-index: 100;
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline: 0;
+    backdrop-filter: blur(1.4em);
+    border-bottom: $border solid 1px;
+
+    ion-icon {
+        font-size: larger;
+    }
+}
+
+.main-header-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    height: 100%;
+    padding-left: 15em;
+
+    .header-content-right,
+    .header-content-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-content-right {
+        padding-inline-start: 0 !important;
+    }
+
+    .header-content-left {
+        display: flex;
+        margin-block: auto !important;
+    }
+
+
+    .header-element {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .header-link {
+        display: flex;
+        align-items: center;
+        padding: 0 0.5rem;
+
+        &:hover,
+        &.show {
+            .header-link-icon {
+                transition: all ease-in-out 0.3s;
+                fill: $header-prime-color;
+                color: $header-prime-color;
+                background-color: $background;
+            }
+        }
+    }
+
+    .header-link-icon {
+        width: 2em;
+        height: 2em;
+        font-size: 1rem;
+        color: $primary;
+        fill: $primary;
+        background-color: $white-9;
+        position: relative;
+        padding: 0.15rem;
+        border-radius: 50%;
+        border: 1px solid $border;
+        box-shadow: $box-shadow;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .header-icon {
+            width: 100%;
+        }
+    }
+
+    .dropdown-menu {
+        min-width: 11rem;
+        &.show {
+            padding: 0 !important;
+        }
+    }
+
+    .dropdown-item {
+        font-weight: 400;
+        font-size: 0.83rem;
+        color: $text-color;
+        padding: 0 0.8rem;
+        height: 2.375rem;
+        display: flex;
+        align-items: center;
+        i,
+        ion-icon {
+            color: $primary;
+            opacity: 0.5;
+            margin-right: 0.5em;
+            transition: margin-right ease-in-out 0.5s;
+        }
+
+        &:hover {
+            background-color: $background;
+            color: $primary;
+            i,
+            ion-icon {
+                opacity: 1;
+                margin-right: 0.25em;
+            }
+        }
+    }
+
+
+    .main-header-dropdown {
+        box-shadow: $box-shadow;
+        inset-block-start: 0.25em !important;
+
+        li {
+            border-bottom: 0.5px solid $border;
+
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+
+        .dropdown-item {
+            padding: 0.6rem 1rem;
+
+            &:last-child {
+                border-block-end: 0;
+            }
+        }
+    }
+}
+
+/*============= AppSidebar =============*/
+.app-sidebar {
+    width: 14.5em;
+    background: $body-color;
+    border-inline-end: 1px solid $menu-border-color;
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    z-index: 100;
+    transition: all 0.05s ease;
+
+    .main-sidebar-header {
+        height: 3.5rem;
+        width: 14.5rem;
+        position: fixed;
+        display: flex;
+        background: $body-color;
+        z-index: 9;
+        align-items: center;
+        justify-content: center !important;
+        padding: 0.813rem 1rem;
+        border-block-end: 1px solid $menu-border-color;
+        border-inline-end: 1px solid $menu-border-color;
+        transition: all 0.05s ease;
+        border-bottom: 1px solid $border;
+
+        .header-logo {
+            img {
+                height: 3.2em;
+                line-height: 0.75rem;
+            }
+        }
+    }
+
+    .main-sidebar {
+        margin-block-start: 3.5rem;
+        padding-block-start: 0.5rem;
+        padding-block-end: 5rem;
+        height: 100vh;
+        position: relative;
+        overflow: auto;
+        box-shadow: $box-shadow;
+
+        .sidebar-menu {
+            padding: 0.05em 0 0.4em;
+            list-style: none;
+        }
+
+        .sidebar-menu > li > a {
+            width: 100%;
+            height: 2.25em;
+            display: flex;
+            align-items: center;
+            font-size: 10.1em;
+            text-transform: capitalize;
+            transition: 0.5s ease-in-out;
+            font-size: var(--font-size);
+            border-bottom: 1px solid $border;
+
+            &.active {
+                background-color: $background;
+                color: $text-color;
+                border-right: 2px solid $text-muted;
+            }
+
+            &:hover {
+                color: $text-color;
+                border-right: 2px solid $text-muted;
+                background-color: $background;
+
+                & > .dropdown-icon {
+                    color: $primary;
+                }
+            }
+
+            & > ion-icon {
+                color: $primary;
+                font-size: 1.25em;
+                margin-inline-start: 0.5em;
+            }
+
+            span {
+                margin-left: 0.15em;
+            }
+        }
+
+        .sidebar-menu-dropdown {
+            position: relative;
+
+            .dropdown-icon {
+                position: absolute;
+                right: 0.9em;
+                width: 0.9em;
+                height: 1em;
+                color: $text-color;
+            }
+        }
+
+        .dropdown-icon::after,
+        .dropdown-icon::before {
+            content: "";
+            width: 50%;
+            height: 2px;
+            border-radius: 2.5%;
+            position: absolute;
+            top: calc(50% - 2px / 2);
+            background-color: $text-color;
+        }
+
+        .dropdown-icon {
+            &::before {
+                left: calc(50% - 2px / 3);
+                transform-origin: center left;
+                transform: rotate(-45deg);
+            }
+
+            &::after {
+                right: calc(50% - 2px / 3);
+                transform-origin: right;
+                transform: rotate(45deg);
+            }
+
+            &.active::before {
+                transform: rotate(45deg);
+            }
+
+            &.active::after {
+                transform: rotate(-45deg);
+            }
+        }
+
+        .sidebar-menu-dropdown-content {
+            padding: 0;
+            height: 0;
+            overflow: hidden;
+            transition: 0.5s ease-in-out;
+
+            & > li > a {
+                padding-left: 2.5em;
+            }
+        }
+    }
+}
+.header-select{
+    padding-left: 3em;
+}
+/*============= App Content =============*/
+.app-content {
+    min-height: calc(100vh - 4em);
+    margin-block-end: 0;
+    margin-block-start: 4em;
+    margin-inline-start: 14.5em;
+    transition: all 0.3s ease;
+}
+
+/*============= Profile Card =============*/
+.profile-card {
+    .avatar.avatar-xxl {
+        position: absolute;
+        inset-block-start: -2.5rem;
+    }
+
+    .profile-card-bg {
+        border-radius: 0.8em 0.8em 0 0;
+        height: 10em;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .card-img-top {
+        width: 100%;
+        border: 4px solid $custom-white;
+    }
+
+}
+
+.profile-timeline {
+    margin-block-end: 0;
+
+    li {
+        padding-inline-start: 3.313rem;
+        position: relative;
+        margin-block-end: 1.75rem;
+
+        .profile-timeline-avatar {
+            position: absolute;
+            inset-inline-start: 0.125rem;
+            inset-block-start: 0.188rem;
+        }
+
+        &:last-child {
+            margin-block-end: 0;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        &::before {
+            content: "";
+            background-color: transparent;
+            border: 1px dashed rgba(var(--dark-rgb), 0.1);
+            height: 100%;
+            position: absolute;
+            inset-inline-start: 0.813rem;
+            inset-block-start: 1.813rem;
+        }
+    }
+
+    .profile-activity-media {
+        img {
+            width: 4rem;
+            height: 3rem;
+            border-radius: $radius;
+            margin: 0.25rem;
+        }
+    }
+}
+
+
+// Tabs
+.setting-tab {
+    display: grid;
+    flex-wrap: nowrap;
+    grid-template-columns: repeat(auto-fit, minmax(10%, 1fr));
+    gap: 0.25em;
+
+    li {
+        margin-inline-end: 0.2em;
+    }
+}
+
+
+/*============= Overlay =============*/
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba($color: #11105b, $alpha: 0.75);
+    display: none;
+    z-index: 99;
+
+    &.active {
+        display: block;
+    }
+}
+
+// DT button
+.dt-buttons{
+span{
+    color: white !important;
+}
+.btn-secondary{
+background-color: $warning !important;
+outline: 0;
+border: none;
+margin: 0 !important;
+border-radius: 50px;
+}
+}
+.dt-search{
+margin-top: -2em;
+    input{
+    border-radius: 2em !important;
+    }
+}
+
+

@@ -5,11 +5,10 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/sass/bcuBackend.scss',
-                'resources/sass/bcuFrontend.scss',
-                'resources/sass/bcuMobile.scss',
-                'resources/js/bcuBScript.js',
-                'resources/js/bcuFScript.js',
+                'resources/sass/frontend.scss',
+                'resources/sass/backend.scss',
+                'resources/sass/mobile.scss',
+                'resources/js/script.js',
             ],
             refresh: true,
         }),

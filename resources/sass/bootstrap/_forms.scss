@@ -1,0 +1,35 @@
+.form-control {
+    border-color: $input-border;
+    color: $text-color;
+    background-color: $form-control-bg;
+    font-size: 0.9rem;
+    font-weight: $font-weight;
+    line-height: 1.7;
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem;
+
+    &:focus {
+        border-color: $primary-05;
+        background-color: $custom-white;
+        box-shadow: 0 0 4px $primary-05;
+        color: $text-color;
+    }
+
+    &.border-dotted {
+        border-style: dotted;
+    }
+
+    &.border-dashed {
+        border-style: dashed;
+    }
+}
+
+.form-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: $text-color;
+}
+
+.form-text {
+    color: $text-muted;
+}

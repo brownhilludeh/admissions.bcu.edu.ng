@@ -1,0 +1,142 @@
+// Bootstrap
+// @import 'bootstrap/scss/bootstrap';
+@import "bootstrap/cards";
+// @import "bootstrap/forms";
+@import "bootstrap/buttons";
+// @import "bootstrap/breadcrumb";
+// @import "bootstrap/modals";
+// @import "avatars";
+// @import "avatars";
+@import "error";
+// @import "bootstrap/buttons";
+
+/*============= Preloader =============*/
+.preloader,
+#preloader {
+    position: fixed;
+    top: 0;
+    inset-inline-start: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $gray-4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/*============= scrollToTop =============*/
+.scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    inset-inline-end: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: none;
+    z-index: 100;
+    cursor: pointer;
+    transition: display 0.3s ease-in-out;
+    border-radius: 50%;
+    background-color: $custom-white;
+
+    ion-icon {
+        color: $primary;
+        background-color: $custom-white;
+        height: 2em;
+        width: 2em;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        box-shadow: $box-shadow;
+        border: 1px solid $border;
+    }
+}
+
+.toast-message {
+    color: $custom-white;
+}
+
+.montserrat{
+font-family: $montserrat;
+}
+
+.admission-status{
+// font-family: $montserrat;
+    font-weight: 700;
+    font-size: x-large;
+}
+
+// .select2-container .select2-selection--single .select2-selection__rendered {
+    // padding-top: 1px;
+    // padding-bottom: 1px;
+//     padding-left: 12px;
+// }
+
+// .select {
+//     padding-left: 17px;
+//     border: 1px solid #ccc;
+// }
+
+// .select2-container--default .select2-selection--single .select2-selection__rendered {
+//     color: #444;
+//     line-height: 32px;
+// }
+
+// // nice
+// .nice-select {
+//     -webkit-tap-highlight-color: transparent;
+//     background-color: #fff;
+//     border: solid 1px darkblue;
+//     box-sizing: border-box;
+//     clear: both;
+//     cursor: pointer;
+//     display: block;
+//     float: left;
+//     font-weight: normal;
+//     outline: none;
+//     padding: .25em 30px .25em .5em;
+//     position: relative;
+//     text-align: left !important;
+//     transition: all 0.9s ease-in-out;
+//     user-select: none;
+//     white-space: nowrap;
+//     width: fit-content;
+//     min-width: 9em;
+// }
+
+
+.bg_yellow {
+    background-color: var(--bg-yellowLight);
+}
+
+.bg_gray {
+    background-color: var(--bg-gray);
+}
+
+.bg_mint {
+    background-color: var(--bg-mint);
+}
+
+.bg_peach {
+    background-color: var(--bg-peach);
+}
+
+.bg_white {
+    background-color: var(--bg-white);
+}
+.text-xsmall {
+    font-weight: 400;
+    font-size: .5em;
+}
+
+.text-small {
+    font-size: .75em;
+    font-weight: 400;
+}
+
+.table-img {
+    height: 2.3em;
+    padding: 0;
+    margin: 0;
+}

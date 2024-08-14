@@ -1,12 +1,15 @@
-@extends('layouts.app')
-
+@extends('layouts.frontend')
+@section('title','Password Reset')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
-
+            <div class="card custom-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        {{ __('Reset Password') }}
+                    </div>
+                </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.update') }}">
                         @csrf
@@ -20,9 +23,9 @@
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -34,9 +37,9 @@
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -51,11 +54,21 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary btn-sm col-12">
                                     {{ __('Reset Password') }}
                                 </button>
                             </div>
                         </div>
+
+                        <hr class="my-2">
+                        <div class="row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <a href="/dashboard" class="btn btn-primary-light btn-sm col-12">
+                                    {{ __('Back to Dashboard') }}
+                                </a>
+                            </div>
+                        </div>
+                        <hr class="my-2">
                     </form>
                 </div>
             </div>

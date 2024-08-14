@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Profile;
 use App\Models\User;
+use App\Notifications\WelcomeMail;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -28,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new controller instance.
@@ -49,9 +51,13 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'last_name' => ['required', 'string', 'max:100'],
+            'first_name' => ['required', 'string', 'max:100'],
+            'other_name' => ['nullable', 'string', 'max:100'],
+            'gender' => ['required', 'string'],
+            'email' => ['required', 'string', 'email', 'max:100', 'unique:users'],
+            'phone' => ['required', 'string', 'min:10', 'max:15', 'unique:users'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
     }
 
@@ -63,10 +69,25 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        $user =  User::create([
+            'last_name' => $data['last_name'],
+            'first_name' => $data['first_name'],
+            'other_name' => $data['other_name'],
+            'phone' => $data['phone'],
+            'username' => $data['email'],
+            'gender' => $data['gender'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $profile = new Profile();
+        $profile->user_id = $user->id;
+        $profile->save();
+
+        if ($user->user_type != 'SuperAdmin' || $user->user_type != 'Admin') {
+            $user->notify(new WelcomeMail($user));
+        }
+
+        return $user;
     }
 }

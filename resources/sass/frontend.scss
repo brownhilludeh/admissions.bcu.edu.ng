@@ -1,0 +1,58 @@
+/*------------------------------------------------------------------
+[Master StyleSheet]
+
+Project                            :   BrownPortal NG - HTML5 Bootstrap Admin Dashboard
+Create Date                        :
+Author & Copyright Ownership       :   Brownportal NG
+Author URL                         :   https://brownportal.com/app/dashboard
+Support	                           :   https://support.brownportal.com/
+License Details                    :   https://brownportal.com/licenses-details
+------------------------------------------------------------------*/
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// Variables
+@import 'themes';
+@import 'variable';
+@import 'resets';
+@import 'avatars';
+@import 'bootstrap/cards';
+@import 'bootstrap/breadcrumb';
+@import 'bootstrap/buttons';
+@import 'bootstrap/forms';
+@import 'bootstrap/modals';
+@import 'general';
+
+
+
+/*============= App Page =============*/
+.frontend-wrapper {
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+
+    .frontend-image {
+        img {
+            position: fixed;
+            height: auto;
+            width: 100%;
+            opacity: .1;
+        }
+    }
+    .frontend-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: $primary-05;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100vh;
+        padding: 1em;
+    }
+}
+
+
+
